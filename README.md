@@ -38,7 +38,7 @@ Podczas `sensors-detect`, wybierz `yes`, aby dodać moduły np. `coretemp`, `nct
 ### NVIDIA (jeśli masz GPU):
 
 ```bash
-sudo apt install nvidia-driver-525
+sudo apt install nvidia-driver-550
 sudo apt install nvidia-container-toolkit
 sudo systemctl restart docker
 ```
@@ -47,13 +47,17 @@ sudo systemctl restart docker
 
 ## 🚀 Uruchomienie eksportera w Docker Compose
 
-1. Sklonuj repozytorium lub utwórz katalog:
+1. Sklonuj repozytorium w katalogu domowym:
 
 ```bash
-mkdir ~/monitoring && cd ~/monitoring
+git clone https://github.com/szypul-uwm/monitoring.git
 ```
 
-2. Stwórz plik `docker-compose.yml` z odpowiednią zawartością.
+2. Przejdź do katalogu `monitoring`.
+
+```bash
+cd monitoring
+```
 
 3. Uruchom eksportery:
 
