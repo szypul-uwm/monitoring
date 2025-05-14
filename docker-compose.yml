@@ -1,0 +1,24 @@
+services:
+  node_exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    restart: unless-stopped
+    network_mode: host
+    pid: host
+    volumes:
+      - /:/host:ro,rslave
+      - ./textfile_collector:/var/lib/node_exporter/textfile_collector
+    command:
+      - '--path.rootfs=/host'
+      - '--collector.textfile.directory=/var/lib/node_exporter/textfile_collector'
+
+  dcgm_exporter:
+    image: nvidia/dcgm-exporter:latest
+    container_name: dcgm_exporter
+    restart: unless-stopped
+    network_mode: host
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+

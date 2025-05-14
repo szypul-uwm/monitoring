@@ -1,0 +1,11 @@
+hardware_sensor_value{name="Core_0"} 49.0
+hardware_sensor_value{name="Core_1"} 51.0
+hardware_sensor_value{name="Core_2"} 58.0
+hardware_sensor_value{name="Core_3"} 49.0
+hardware_sensor_value{name="Core_4"} 60.0
+hardware_sensor_value{name="Core_5"} 52.0
+hardware_sensor_value{name="fan1"} 0
+hardware_sensor_value{name="fan2"} 961
+hardware_sensor_value{name="fan3"} 0
+hardware_sensor_value{name="fan4"} 0
+hardware_sensor_value{name="fan5"} 0
