@@ -1,0 +1,7 @@
+process_names:
+  - name: "ffmpeg"
+    cmdline:
+      - "(?i).+ffmpeg.+"
+  - name: "Jazm"
+    cmdline:
+      - "(?i).+jazm.+"

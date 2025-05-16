@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   node_exporter:
     image: prom/node-exporter:latest
@@ -21,4 +23,13 @@ services:
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=all
+
+  process-exporter:
+    image: ncabatoff/process-exporter:latest
+    container_name: process-exporter
+    network_mode: host
+    volumes:
+      - /proc:/host/proc:ro
+      - ./process-exporter.yml:/config.yml:ro
+    command: ["--procfs", "/host/proc", "--config.path", "/config.yml"]
 
