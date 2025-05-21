@@ -27,6 +27,10 @@ services:
     container_name: process-exporter
     network_mode: host
     restart: unless-stopped
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - apparmor=unconfined
     volumes:
       - /proc:/host/proc:ro
       - ./process-exporter.yml:/config.yml:ro
